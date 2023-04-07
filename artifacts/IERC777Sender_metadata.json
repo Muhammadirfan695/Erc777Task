@@ -1,0 +1,88 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "userData",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "operatorData",
+						"type": "bytes"
+					}
+				],
+				"name": "tokensToSend",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"tokensToSend(address,address,address,uint256,bytes,bytes)": {
+					"details": "Called by an {IERC777} token contract whenever a registered holder's (`from`) tokens are about to be moved or destroyed. The type of operation is conveyed by `to` being the zero address or not. This call occurs _before_ the token contract's state is updated, so {IERC777-balanceOf}, etc., can be used to query the pre-operation state. This function may revert to prevent the operation from being executed."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ERC7771.sol": "IERC777Sender"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ERC7771.sol": {
+			"keccak256": "0x05aa0c1acd1485152f342429f372a273c9d924d1184b4517384af09de17056f6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://000272fbbf7eb66ec6b9d145da67e52686521bcda3fe79533c7d2a01bebe3bd5",
+				"dweb:/ipfs/Qmc5wyc8Ser4r5AkEAhFi5ijsHutDwz7GGeQKamZ1Kxojj"
+			]
+		}
+	},
+	"version": 1
+}

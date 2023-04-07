@@ -1,0 +1,348 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "ReferralReward",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "referrer",
+						"type": "address"
+					}
+				],
+				"name": "Staked",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balances",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "referrers",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "registered",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_referrer",
+						"type": "address"
+					}
+				],
+				"name": "stake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stakingToken",
+				"outputs": [
+					{
+						"internalType": "contract IERC777",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "tokensReceived",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "userData",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "operatorData",
+						"type": "bytes"
+					}
+				],
+				"name": "tokensToSend",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalStaked",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"tokensToSend(address,address,address,uint256,bytes,bytes)": {
+					"details": "Called by an {IERC777} token contract whenever a registered holder's (`from`) tokens are about to be moved or destroyed. The type of operation is conveyed by `to` being the zero address or not. This call occurs _before_ the token contract's state is updated, so {IERC777-balanceOf}, etc., can be used to query the pre-operation state. This function may revert to prevent the operation from being executed."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"stake.sol": "MyStakingContract"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+				"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC777/ERC777.sol": {
+			"keccak256": "0xd072bae157dbfae22652801c8811296d7b3311d0432407fbd4d2e961eac63f0a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://607b2aabf33cfa043ae1b6f0c7dca80718d440e6d980c6afac734851c69ede75",
+				"dweb:/ipfs/QmPGzMcypjgArPY4PUKbgJcVh5m9aZKos6bxbTwzZHyDVn"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC777/IERC777.sol": {
+			"keccak256": "0x385a7061f1436b079d44c140dee9387d5313e94874ff9ee877dc0085c981ac3d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1c3fe22bb0d9527356e11f267f9187134de4d4ed1ff77468b4d73e3238697b96",
+				"dweb:/ipfs/Qmc8caJctgxbzXEpxRogQMR2bnBk5U67hA7kKbUEG2PUXV"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC777/IERC777Recipient.sol": {
+			"keccak256": "0x1a5d61db2733202ba361e6d6741cd2e662380e22b80e987eacfc91973f2267dc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://04c0cd697050a6516b7779aa2343ad2d0e5217d8915ac2382681dfdf4e445be3",
+				"dweb:/ipfs/QmPCBCZgm7pHBwwogE2F9NCN3UfTdLNhqc8UDEvw8kDzyA"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC777/IERC777Sender.sol": {
+			"keccak256": "0x742e51d63b108240759794360637468d9fcbf072cbd357744790d356a87bb382",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://23912910ce2bb68e49ff83f43fcfa864210ee44580491e876db14922f8aecc18",
+				"dweb:/ipfs/QmU6GnRQ51xvY8D57kPCV47oGeYozaz5AQZUCHxFfXdFZ4"
+			]
+		},
+		"@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0xf96f969e24029d43d0df89e59d365f277021dac62b48e1c1e3ebe0acdd7f1ca1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ec772b45a624be516f1c81970caa8a2e144301e9d0921cbc1a2789fef39a1269",
+				"dweb:/ipfs/QmNyjwxCrGhQMyzLD93oUobJXVe9ceJvRvfXwbEtuxPiEj"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC1820Registry.sol": {
+			"keccak256": "0xd750324b0fc76aa4c1b0aadf7cab03b3d1cc4d5744348c18ba2b99dbdbe1758d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d53cbf8e2e469a6422fb61d8636af3ec39d8e10e7f4d99d625bdd36d4b8ddf34",
+				"dweb:/ipfs/QmNhvk3jmfgquVki2V7gNmTWTMeNwEPCnetybeBntQtsyJ"
+			]
+		},
+		"stake.sol": {
+			"keccak256": "0x04e05822fb6d301f2f9804b6270341b7d23c434717f0b71b15b760b76a6b5b63",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3f192ca3b03eea247737c2147f028d8ca626a4c4c39c8008e770839d19a13775",
+				"dweb:/ipfs/QmTZoCgc6J1UNfLsAbwRQzE7N8vN3PY3iQoWcLTPZ5DCU5"
+			]
+		}
+	},
+	"version": 1
+}
